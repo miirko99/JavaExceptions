@@ -12,17 +12,18 @@ public class Main {
         validateHeight(heights[1]);//checked HeightLessThanZeroException
         validateHeight(heights[2]);//checked but not throw any
     }
-    public static void validateHeight(double Height) throws HeightLessThanZeroException, HeightTooBigException {
+    public static boolean validateHeight(double Height) throws HeightLessThanZeroException, HeightTooBigException {
         if(Height<=0){
             throw new HeightLessThanZeroException();
         }
         if(Height>300){
             throw new HeightTooBigException();
         }
+        return true;
     }
     public static void main(String[] args){
         double[] heights=new double[3];
-        //heights[3]=345;//Index out of bounds unchecked
+        heights[3]=345;//Index out of bounds unchecked
         try {
             fillHeights(heights);
         } catch (HeightLessThanZeroException | HeightTooBigException | ArrayIndexOutOfBoundsException e) {
