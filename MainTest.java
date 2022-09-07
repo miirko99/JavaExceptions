@@ -2,9 +2,12 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MainTest {
     static Logger LOGGER;
@@ -39,17 +42,17 @@ class MainTest {
         assertThrows(HeightLessThanZeroException.class,()->{m.validateHeight(-1000);});
     }
     @Test
-    public void positive1ReturnsNull() throws HeightTooBigException, HeightLessThanZeroException {
+    public void positive1ReturnsTrue() throws HeightTooBigException, HeightLessThanZeroException {
         Main m=new Main();
         assertEquals(true,m.validateHeight(1));
     }
     @Test
-    public void positive2ReturnsNull() throws HeightTooBigException, HeightLessThanZeroException {
+    public void positive2ReturnsTrue() throws HeightTooBigException, HeightLessThanZeroException {
         Main m=new Main();
         assertEquals(true,m.validateHeight(299));
     }
     @Test
-    public void positive3ReturnsNull() throws HeightTooBigException, HeightLessThanZeroException {
+    public void positive3ReturnsTrue() throws HeightTooBigException, HeightLessThanZeroException {
         Main m=new Main();
         assertEquals(true,m.validateHeight(150));
     }
