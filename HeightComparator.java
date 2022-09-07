@@ -17,6 +17,4 @@ public class HeightComparator {
         this.valid.validateHeight(b);
         return a<b;
     }
-
-
 }
