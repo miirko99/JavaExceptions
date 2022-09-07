@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -6,19 +7,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class MainTest {
-
+    static Logger LOGGER;
     @BeforeAll
     public static void setup(){
-        Logger LOGGER = Logger.getLogger(MainTest.class.getName());
+        LOGGER = Logger.getLogger(MainTest.class.getName());
         LOGGER.info("Logger Name: "+LOGGER.getName());
-        LOGGER.log(Level.SEVERE, "Testiranje je pocelo");
+        LOGGER.log(Level.INFO, "Testiranje je pocelo");
 
     }
     @AfterAll
     public static void end(){
-        Logger LOGGER = Logger.getLogger(MainTest.class.getName());
-        LOGGER.info("Logger Name: "+LOGGER.getName());
-        LOGGER.log(Level.SEVERE, "Testiranje se zavrsilo");
+        LOGGER.log(Level.INFO, "Testiranje se zavrsilo");
+    }
+    @AfterEach
+    public void each(){
+        LOGGER.log(Level.INFO, "Ovo se stampa posle svakog testa");
     }
     @Test
     public void negativethrowsHLTZE(){
