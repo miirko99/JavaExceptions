@@ -75,4 +75,4 @@ class MainTestMock {
         when(m.validateHeight(10001)).thenThrow(HeightTooBigException.class);
         assertThrows(HeightTooBigException.class,()->{m.validateHeight(10001);});
     }
-}
+}*/
