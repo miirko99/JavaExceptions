@@ -28,42 +28,42 @@ class MainTest {
     }
     @Test
     public void negativethrowsHLTZE(){
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertThrows(HeightLessThanZeroException.class,()->{HV.validateHeight(-1);});
     }
     @Test
     public void zerothrowsHLTZE(){
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertThrows(HeightLessThanZeroException.class,()->{HV.validateHeight(0);});
     }
     @Test
     public void bigNegativethrowsHLTZE(){
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertThrows(HeightLessThanZeroException.class,()->{HV.validateHeight(-1000);});
     }
     @Test
     public void positive1ReturnsTrue() throws HeightTooBigException, HeightLessThanZeroException {
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertEquals(true,HV.validateHeight(1));
     }
     @Test
     public void positive2ReturnsTrue() throws HeightTooBigException, HeightLessThanZeroException {
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertEquals(true,HV.validateHeight(299));
     }
     @Test
     public void positive3ReturnsTrue() throws HeightTooBigException, HeightLessThanZeroException {
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertEquals(true,HV.validateHeight(150));
     }
     @Test
     public void bigPositiveThrowsHTBE(){
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertThrows(HeightTooBigException.class,()->{HV.validateHeight(301);});
     }
     @Test
     public void reallybigPositiveThrowsHTBE(){
-        HeightValidator HV=new HeightValidator();
+        HeightComparator HV=new HeightComparator();
         assertThrows(HeightTooBigException.class,()->{HV.validateHeight(10001);});
     }
 

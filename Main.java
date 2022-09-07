@@ -4,10 +4,9 @@ public class Main {
         double[] heights=new double[3];
 
 
-        HeightValidator HV=new HeightValidator();
-        HV.fillHeights();
+        HeightComparator HC=new HeightComparator();
         try {
-            HV.checkHeights();
+            HC.isGrather(1,2);
         } catch (HeightLessThanZeroException | HeightTooBigException | ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
