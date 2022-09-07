@@ -6,11 +6,12 @@ public class Main {
         heights[3]=345;//Index out of bounds unchecked
         checkHeights(heights);//checked HeightTooBigException, HeightLessThanZeroException
     }
-    public static void checkHeights(double[] heights) throws HeightTooBigException, HeightLessThanZeroException {
-        validateHeight(heights[3]);//Index out of bounds unchecked
+    public static boolean checkHeights(double[] heights) throws HeightTooBigException, HeightLessThanZeroException {
+        //validateHeight(heights[3]);//Index out of bounds unchecked
         validateHeight(heights[0]);//checked HeightTooBigException
         validateHeight(heights[1]);//checked HeightLessThanZeroException
         validateHeight(heights[2]);//checked but not throw any
+        return true;
     }
     public static boolean validateHeight(double Height) throws HeightLessThanZeroException, HeightTooBigException {
         if(Height<=0){
