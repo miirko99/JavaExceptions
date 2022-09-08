@@ -1,25 +1,25 @@
 public class HeightValidator {
     private double low,high;
     HeightValidator(){
-        this.low=0;
-        this.high=215;
+        low=0;
+        high=215;
     }
     HeightValidator(double low, double high){
         this.low=low;
         this.high=high;
     }
-    public boolean checkHeights(double[] heights) throws HeightTooBigException, HeightLessThanZeroException {
+    public boolean checkHeights(double[] heights) throws HeightTooBigException, HeightLessThanLowException {
         for (double a:heights) {
-            this.validateHeight(a);
+            validateHeight(a);
         }
         return true;
     }
-    public boolean validateHeight(double Height) throws HeightLessThanZeroException, HeightTooBigException {
-        if(Height<=this.low){
-            throw new HeightLessThanZeroException(Height);
+    public boolean validateHeight(double Height) throws HeightLessThanLowException, HeightTooBigException {
+        if(Height<low){
+            throw new HeightLessThanLowException(Height,low);
         }
-        if(Height>this.high){
-            throw new HeightTooBigException(Height);
+        if(Height>high){
+            throw new HeightTooBigException(Height,high);
         }
         return true;
     }

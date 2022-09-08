@@ -1,10 +1,10 @@
-public class HeightLessThanZeroException extends Exception {
-    public HeightLessThanZeroException(){
-        super("Visina mora biti veca od nule");    }
-    HeightLessThanZeroException(double H){
-        super("Visina mora biti veca od 0, vas unos: "+H);
+public class HeightLessThanLowException extends Exception {
+    public HeightLessThanLowException(){
+        super("Visina mora biti veca od low");    }
+    HeightLessThanLowException(double H, double L){
+        super("Visina mora biti veca od "+L+", vas unos: "+H);
     }
-    public HeightLessThanZeroException(String msg){
+    public HeightLessThanLowException(String msg){
         super("Cusom"+msg);
     }
 }
