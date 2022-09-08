@@ -1,7 +1,7 @@
 public class HeightValidator {
     private double low,high;
     HeightValidator(){
-        low=0;
+        low=100;
         high=215;
     }
     HeightValidator(double low, double high){
